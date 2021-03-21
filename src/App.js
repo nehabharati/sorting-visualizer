@@ -19,7 +19,6 @@ function App() {
   const [swapColor] = useState("pink");
   const [barNumber, setBarNumber] = useState(10);
   const [barWidth, setBarWidth] = useState("2px");
-  const [speed, setSpeed] = useState("20");
   const bars = document.getElementsByClassName("bar");
 
   useEffect(() => {
@@ -51,36 +50,37 @@ function App() {
     setSortArray(sortArray.concat(Array));
   }
 
-
   const implementBubbleSort = () => {
     setAlgorithm("Bubble Sort  - O(N^2)");
     const visualizer = bubbleSort(sortArray);
-    bubbleSortVisualizer(bars, visualizer, compareColor, swapColor, speed);
+    console.log(visualizer)
+    bubbleSortVisualizer(bars, visualizer, compareColor, swapColor);
   }
 
   const implementInsertionSort = () => {
     setAlgorithm("Insertion Sort - O(N^2)");
     const visualizer = insertionSort(sortArray);
-    insertionSortVisualizer(bars, visualizer, compareColor, swapColor, speed);
+    insertionSortVisualizer(bars, visualizer, compareColor, swapColor);
   }
 
   const implementHeapSort = () => {
     setAlgorithm("Heap Sort - O(log(N))");
     const visualizer = heapSort(sortArray);
-    console.log(visualizer)
-    heapSortVisualizer(bars, visualizer, compareColor, swapColor, speed);
+
+    heapSortVisualizer(bars, visualizer, compareColor, swapColor);
   }
 
   const implementQuickSort = () => {
     setAlgorithm("Quick Sort - O(log(N))");
     const visualizer = quickSort(sortArray);
-    quickSortVisualizer(bars, visualizer, compareColor, swapColor, speed)
+    console.log(visualizer)
+    quickSortVisualizer(bars, visualizer, compareColor, swapColor)
   }
 
   const implementMergeSort = () => {
     setAlgorithm("Merge Sort - O(log(N))");
     const visualizer = mergeSort(sortArray);
-    mergeSortVisualizer(bars, visualizer, compareColor, swapColor, speed);
+    mergeSortVisualizer(bars, visualizer, compareColor, swapColor);
   }
 
   const selectBarNumber = (e) => setBarNumber(e.target.value);

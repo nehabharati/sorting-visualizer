@@ -1,11 +1,11 @@
-export function heapSortVisualizer(bars, visualizer, compare, swap, speed) {
+export function heapSortVisualizer(bars, visualizer, compare, swap) {
     for (let i = 0; i < visualizer.length; i++) {
         const [value1, value2] = visualizer[i];
         if (typeof value1 !== "object") {
             setTimeout(() => {
                 bars[value1].style.backgroundColor = compare;
                 bars[value2].style.backgroundColor = compare;
-            }, i * speed);
+            }, i * 20);
         }
         else {
             setTimeout(() => {
@@ -38,7 +38,7 @@ export function heapSortVisualizer(bars, visualizer, compare, swap, speed) {
                     bars[barTwo].style.height = `${barOneHeight}px`;
                     bars[barTwo].style.top = (0 + (200 - bars[barTwo].clientHeight)) + "px";
                 }
-            }, i * speed);
+            }, i * 20);
         }
     }
 }

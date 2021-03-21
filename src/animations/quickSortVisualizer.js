@@ -1,4 +1,4 @@
-export function quickSortVisualizer(bars, visualizer, compare, swap, speed) {
+export function quickSortVisualizer(bars, visualizer, compare, swap) {
     let pivotColor = "orange";
     for (let i = 0; i < visualizer.length; i++) {
         if (visualizer[i].length === 3) {
@@ -18,7 +18,7 @@ export function quickSortVisualizer(bars, visualizer, compare, swap, speed) {
                 setTimeout(() => {
                     bars[value1].style.backgroundColor = compare;
                     bars[value2].style.backgroundColor = compare;
-                }, i * speed);
+                }, i * 20);
             }
             else {
                 setTimeout(() => {
@@ -51,7 +51,7 @@ export function quickSortVisualizer(bars, visualizer, compare, swap, speed) {
                         bars[barTwo].style.height = `${barOneHeight}px`;
                         bars[barTwo].style.top = (0 + (200 - bars[barTwo].clientHeight)) + "px";
                     }
-                }, i * speed);
+                }, i * 20);
             }
         }
     }

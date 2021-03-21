@@ -1,4 +1,4 @@
-export function insertionSortVisualizer(bars, visualizer, compare, swap, speed) {
+export function insertionSortVisualizer(bars, visualizer, compare, swap) {
     for (let i = 0; i < visualizer.length; i++) {
         // If we're at an odd index, these are the compare values, so they should be red 
         if (i % 3 !== 2) {
@@ -7,7 +7,7 @@ export function insertionSortVisualizer(bars, visualizer, compare, swap, speed) 
             setTimeout(() => {
                 bars[barOne].style.background = color;
                 bars[barTwo].style.background = color;
-            }, i * speed);
+            }, i * 20);
         }
         else {
             setTimeout(() => {
@@ -32,7 +32,7 @@ export function insertionSortVisualizer(bars, visualizer, compare, swap, speed) 
                     bars[barTwo].style.height = `${barOneHeight}px`;
                     bars[barTwo].style.top = (0 + (200 - bars[barTwo].clientHeight)) + "px";
                 }
-            }, i * speed);
+            }, i * 20);
         }
     }
 }

@@ -1,4 +1,4 @@
-export function mergeSortVisualizer(bars, visualizer, compare, swap, speed) {
+export function mergeSortVisualizer(bars, visualizer, compare, swap) {
     console.log(visualizer)
     for (let i = 0; i < visualizer.length; i++) {
         const isColorChange = i % 3 !== 2;
@@ -19,7 +19,7 @@ export function mergeSortVisualizer(bars, visualizer, compare, swap, speed) {
                     bars[barOneIdx].style.backgroundColor = swap;
                     bars[barTwoIdx].style.backgroundColor = swap;
                 }
-            }, i * speed);
+            }, i * 20);
         } else {
             setTimeout(() => {
                 let [barOneIdx, newHeight] = visualizer[i];
@@ -36,7 +36,7 @@ export function mergeSortVisualizer(bars, visualizer, compare, swap, speed) {
                 }
                 const barOneStyle = bars[barOneIdx].style;
                 barOneStyle.height = `${newHeight}px`;
-            }, i * speed);
+            }, i * 20);
         }
     }
 }
