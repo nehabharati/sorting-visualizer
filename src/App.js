@@ -19,6 +19,7 @@ function App() {
   const [swapColor] = useState("pink");
   const [barNumber, setBarNumber] = useState(10);
   const [barWidth, setBarWidth] = useState("2px");
+  const [sorted, setSorted] = useState(false);
   const bars = document.getElementsByClassName("bar");
 
   useEffect(() => {
@@ -67,14 +68,17 @@ function App() {
     setAlgorithm("Heap Sort - O(log(N))");
     const visualizer = heapSort(sortArray);
 
-    heapSortVisualizer(bars, visualizer, compareColor, swapColor);
+    let sorted = heapSortVisualizer(bars, visualizer, compareColor, swapColor);
+
   }
 
   const implementQuickSort = () => {
     setAlgorithm("Quick Sort - O(log(N))");
     const visualizer = quickSort(sortArray);
     console.log(visualizer)
-    quickSortVisualizer(bars, visualizer, compareColor, swapColor)
+    let sortedArr = quickSortVisualizer(bars, visualizer, compareColor, swapColor);
+    setSorted(sortedArr)
+    console.log(sorted)
   }
 
   const implementMergeSort = () => {
@@ -109,12 +113,12 @@ function App() {
           <label>Select input length</label>
           <input type="range" min="10" max="100" onChange={selectBarNumber} value="10" />
         </div>
-        <button onClick={() => randomizeArray(-100, 200)}>Generate array</button>
-        <button onClick={implementBubbleSort}>Bubble Sort</button>
-        <button onClick={implementInsertionSort}>Insertion Sort</button>
-        <button onClick={implementHeapSort}>Heap Sort</button>
-        <button onClick={implementQuickSort}>Quick Sort</button>
-        <button onClick={implementMergeSort}>Merge Sort</button>
+        <button disabled={sorted} style={{ backgroundColor: sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={() => randomizeArray(-100, 200)}>Generate array</button>
+        <button disabled={sorted} style={{ backgroundColor: sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={implementBubbleSort}>Bubble Sort</button>
+        <button disabled={sorted} style={{ backgroundColor: sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={implementInsertionSort}>Insertion Sort</button>
+        <button disabled={sorted} style={{ backgroundColor: sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={implementHeapSort}>Heap Sort</button>
+        <button style={{ backgroundColor: !sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={implementQuickSort}>Quick Sort</button>
+        <button disabled={sorted} style={{ backgroundColor: sorted ? "gray" : "rgba(20,20,91,0.5)" }} onClick={implementMergeSort}>Merge Sort</button>
       </div>
     </div>
   );

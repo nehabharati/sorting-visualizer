@@ -1,18 +1,15 @@
 export function quickSortVisualizer(bars, visualizer, compare, swap) {
+    let isRunning = true;
     let pivotColor = "orange";
     for (let i = 0; i < visualizer.length; i++) {
         if (visualizer[i].length === 3) {
             setTimeout(() => {
-                let [barPivot, barOne, barTwo] = visualizer[i];
+                let [barPivot] = visualizer[i];
                 bars[barPivot].style.backgroundColor = pivotColor;
-                bars[barOne].style.backgroundColor = compare;
-                bars[barTwo].style.backgroundColor = compare;
-                bars[barOne].style.backgroundColor = swap;
-                bars[barTwo].style.backgroundColor = swap;
-                bars[barPivot].style.backgroundColor = swap;
-            }, i * 1);
+            }, i * 20);
         }
         else {
+            // console.log("hi")
             const [value1, value2] = visualizer[i];
             if (typeof value1 !== "object") {
                 setTimeout(() => {
@@ -54,5 +51,10 @@ export function quickSortVisualizer(bars, visualizer, compare, swap) {
                 }, i * 20);
             }
         }
+        console.log("hi")
+        isRunning = true;
     }
+    console.log("hi")
+    isRunning = false;
+    return isRunning;
 }

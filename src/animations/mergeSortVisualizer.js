@@ -4,12 +4,12 @@ export function mergeSortVisualizer(bars, visualizer, compare, swap) {
         const isColorChange = i % 3 !== 2;
         if (isColorChange) {
             const [barOneIdx, barTwoIdx] = visualizer[i];
-            console.log(i, visualizer.length - 1)
-            if (i === visualizer.length - 2) {
-                console.log("hih")
-                bars[barOneIdx].style.backgroundColor = "green";
-                bars[barTwoIdx].style.backgroundColor = "green";
-            }
+            // console.log(i, visualizer.length - 1)
+            // if (i === visualizer.length - 2) {
+            //     console.log("hih")
+            //     bars[barOneIdx].style.backgroundColor = "green";
+            //     bars[barTwoIdx].style.backgroundColor = "green";
+            // }
             setTimeout(() => {
                 if (i % 3 === 0) {
                     bars[barOneIdx].style.backgroundColor = compare;
