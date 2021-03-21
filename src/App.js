@@ -19,7 +19,7 @@ function App() {
   const [swapColor] = useState("pink");
   const [barNumber, setBarNumber] = useState(10);
   const [barWidth, setBarWidth] = useState("2px");
-  const [speed, setSpeed] = useState("20")
+  const [speed, setSpeed] = useState("20");
   const bars = document.getElementsByClassName("bar");
 
   useEffect(() => {
@@ -27,17 +27,17 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (barNumber < 20) { setBarWidth("20px"); setSpeed("50"); }
-    else if (barNumber < 50) { setBarWidth("10px"); setSpeed("30"); }
-    else { setBarWidth("5px"); setSpeed("20") };
+    if (barNumber < 20) { setBarWidth("20px"); }
+    else if (barNumber < 50) { setBarWidth("10px"); }
+    else { setBarWidth("5px"); };
     randomizeArray(-100, 200);
   }, [barNumber])
 
   const randomizeArray = (min, max) => {
     setAlgorithm("Choose an algorithm");
-    let Array = [];
     setBarsArray(barsArray.length = 0);
     setSortArray(sortArray.length = 0);
+    let Array = [];
     for (var i = 0; i < barNumber; i++) {
       let value = Math.floor(Math.random() * (max - min + 1) + min);
       if (value !== 0) Array.push(value);
@@ -50,6 +50,7 @@ function App() {
     setBarsArray(barsArray.concat(Array))
     setSortArray(sortArray.concat(Array));
   }
+
 
   const implementBubbleSort = () => {
     setAlgorithm("Bubble Sort  - O(N^2)");
