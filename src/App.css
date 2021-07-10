@@ -1,37 +1,42 @@
 body {
   text-align: center;
   /* background-color: rgba(16,16,70,0.4); */
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
 }
 
-h1,h2 {
-  color:#fff;
+h1,
+h2 {
+  color: #fff;
   margin: 0;
-} 
+}
 
 .visualizer {
-  background-color: rgba(16,16,70,0.2);
+  background-color: rgba(16, 16, 70, 0.2);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   margin: 2em;
   padding: 1em;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
- 
-.bar{
+
+.bar {
   width: 2px;
   background-color: pink;
   margin: 0 1px;
   position: relative;
-  top:50%;
+  top: 50%;
   border-radius: 5px;
 }
 
-.bar-container{
-  display: flex; 
+.bar-container {
+  display: flex;
   justify-content: center;
   height: 400px;
   padding: 3em 0;
@@ -40,13 +45,14 @@ h1,h2 {
 .button-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 button {
-  background:  rgba(20,20,91,0.5);
+  background: rgba(20, 20, 91, 0.5);
   /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-  backdrop-filter: blur( 5.5px );
-  -webkit-backdrop-filter: blur( 5.5px );
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
   padding: 1em;
   border-radius: 10px;
@@ -65,43 +71,42 @@ button {
 }
 
 .range-container label {
-  margin: .5em 0;
+  margin: 0.5em 0;
   color: #fff;
 }
 
 .range-container input {
-  -webkit-appearance:none;
-  appearance:none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: #333;
-  border-radius:30px; 
+  border-radius: 30px;
   transition: all 0.5s;
-  cursor:pointer; 
+  cursor: pointer;
 }
 
 .range-container input:focus {
-  outline:none;
+  outline: none;
 }
 
-.range-container input:-webkit-slider-runnable-track  {
-  background-color:#000;
+.range-container input:-webkit-slider-runnable-track {
+  background-color: #000;
 }
 
- .range-container input:-moz-range-track {
-  background-color:#000;
+.range-container input:-moz-range-track {
+  background-color: #000;
 }
 
- .range-container input:-webkit-slider-thumb {
+.range-container input:-webkit-slider-thumb {
   border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: rgb(241, 94, 255);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: rgb(241, 94, 255);
 }
 
- .range-container input:-moz-range-thumb {
-  background-color:white;
-  height:50px;
-  width:50px;
+.range-container input:-moz-range-thumb {
+  background-color: white;
+  height: 50px;
+  width: 50px;
   transition: all 0.5s;
 }
-  
